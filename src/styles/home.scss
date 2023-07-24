@@ -1,0 +1,155 @@
+//font-family
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+//primary
+$marine-blue:hsl(213, 96%, 18%);
+$Purplish-blue: hsl(243, 100%, 62%);
+$Pastel-blue: hsl(228, 100%, 84%);
+$Light-blue: hsl(206, 94%, 87%);
+$Strawberry-red: hsl(354, 84%, 57%);
+
+//neutral
+$Cool-gray: hsl(231, 11%, 63%);
+$Light-gray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: $Magnolia;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper{
+        width: 80%;
+        height: 60%;
+        background-color: $White;
+        border-radius: 20px;
+        padding-left: 1%;
+        display: flex;
+        align-items: center;
+        font-family: 'Ubuntu', sans-serif;
+
+        .sidebar {
+            width: 35%;
+            height: 96%;
+            float: left;
+        }
+
+        .stepswrapper{
+            width: 25.2%;
+            height: 46%;
+            position: absolute;
+            // background-color: rgb(24, 117, 197);
+            display: flex;
+            justify-content: flex-start;
+
+        .steps{
+            width: 80%;
+            height: 10%;
+            // background-color: aliceblue;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 10%;
+            align-items: center;
+
+            .number {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $White;
+                border-radius: 20px;
+                color: $White;
+                font-weight: 500;
+                margin-right: 5%;
+            }
+
+            .steps2 {
+                display: flex;
+                flex-direction: column;
+
+                .stepNo {
+                    color: $Light-gray;
+                    font-size: 11px;
+                    font-weight: 500;
+                    opacity: 0.7;
+                }
+
+                .stepTitle {
+                    color: $White;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+
+        .body {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10%;
+            padding-right: 5%;
+            padding-top: 20%;
+            padding-bottom: 5%;
+            font-family: 'Ubuntu', sans-serif;
+
+            .title {
+                font-weight: 700;
+                color: $marine-blue;
+                font-size: 28px;
+            }
+
+            .instruction {
+                font-weight: 400;
+                color: $Cool-gray;
+                font-size: 13px;
+                line-height: 26px;
+                margin-bottom: 5%;
+            }
+
+            .label {
+                font-weight: 500;
+                color: $marine-blue;
+                font-size: 13px;
+                line-height: 26px;
+            }
+
+            input {
+                height: 35px;
+                font-weight: 700;
+                color: $marine-blue;
+                font-size: 13px;
+                margin-bottom: 3%;
+                padding-left: 2%;
+                border: 2px solid $Light-gray;
+                border-radius: 8px;
+
+                ::placeholder{
+                    color: $Cool-gray; 
+                    font-weight: 500;                  
+                }
+            }
+
+            .button{
+                width: 20%;
+                height: 35px;
+                background-color: $marine-blue;
+                font-weight: 500;
+                color: $White;
+                font-size: 13px;
+                border: none;
+                border-radius: 5px;
+                margin-top: 20%;
+                margin-left: 80%;
+            }
+        }
+    }
+}
