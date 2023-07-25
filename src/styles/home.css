@@ -2,23 +2,25 @@
 .container {
   width: 100%;
   height: 100vh;
+  position: relative;
   background-color: hsl(217, 100%, 97%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .container .wrapper {
-  width: 80%;
-  height: 60%;
+  width: 60%;
+  height: 80%;
+  position: relative;
   background-color: hsl(0, 0%, 100%);
   border-radius: 20px;
-  padding-left: 1%;
+  padding-left: 0.5%;
   display: flex;
   align-items: center;
   font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .sidebar {
-  width: 35%;
+  width: 26%;
   height: 96%;
   float: left;
 }
@@ -26,8 +28,11 @@
   width: 25.2%;
   height: 46%;
   position: absolute;
+  top: 14%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  z-index: 1000;
 }
 .container .wrapper .stepswrapper .steps {
   width: 80%;
@@ -35,6 +40,7 @@
   display: flex;
   justify-content: flex-start;
   padding-left: 10%;
+  margin-bottom: 10%;
   align-items: center;
 }
 .container .wrapper .stepswrapper .steps .number {
@@ -46,6 +52,8 @@
   border: 1px solid hsl(0, 0%, 100%);
   border-radius: 20px;
   color: hsl(0, 0%, 100%);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
   font-weight: 500;
   margin-right: 5%;
 }
@@ -55,71 +63,132 @@
 }
 .container .wrapper .stepswrapper .steps .steps2 .stepNo {
   color: hsl(229, 24%, 87%);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   opacity: 0.7;
 }
 .container .wrapper .stepswrapper .steps .steps2 .stepTitle {
+  margin-top: 5%;
   color: hsl(0, 0%, 100%);
+  font-family: "Ubuntu", sans-serif;
   font-size: 13px;
+  font-weight: 700;
+}
+.container .wrapper .stepswrapper .steps1 {
+  width: 80%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10%;
+  margin-bottom: 10%;
+  align-items: center;
+}
+.container .wrapper .stepswrapper .steps1 .number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(206, 94%, 87%);
+  border: 1px solid hsl(206, 94%, 87%);
+  border-radius: 20px;
+  color: #000000;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-right: 5%;
+}
+.container .wrapper .stepswrapper .steps1 .steps2 {
+  display: flex;
+  flex-direction: column;
+}
+.container .wrapper .stepswrapper .steps1 .steps2 .stepNo {
+  color: hsl(229, 24%, 87%);
+  font-size: 12px;
   font-weight: 500;
+  opacity: 0.7;
+}
+.container .wrapper .stepswrapper .steps1 .steps2 .stepTitle {
+  margin-top: 5%;
+  color: hsl(0, 0%, 100%);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
 }
 .container .wrapper .body {
   width: 60%;
-  height: 100%;
+  height: 80%;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-left: 10%;
   padding-right: 5%;
-  padding-top: 20%;
+  padding-top: 10%;
   padding-bottom: 5%;
   font-family: "Ubuntu", sans-serif;
+  z-index: 9999;
 }
 .container .wrapper .body .title {
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 28px;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body .instruction {
   font-weight: 400;
   color: hsl(231, 11%, 63%);
   font-size: 13px;
-  line-height: 26px;
   margin-bottom: 5%;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body .label {
+  height: 5%;
+  display: flex;
+  align-items: flex-end;
   font-weight: 500;
   color: hsl(213, 96%, 18%);
   font-size: 13px;
-  line-height: 26px;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body input {
-  height: 35px;
+  height: 8%;
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 13px;
+  margin-top: 1%;
   margin-bottom: 3%;
   padding-left: 2%;
   border: 2px solid hsl(229, 24%, 87%);
   border-radius: 8px;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body input ::-moz-placeholder {
   color: hsl(231, 11%, 63%);
   font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body input ::placeholder {
   color: hsl(231, 11%, 63%);
   font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
 }
 .container .wrapper .body .button {
-  width: 20%;
-  height: 35px;
+  width: 16%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: hsl(213, 96%, 18%);
   font-weight: 500;
   color: hsl(0, 0%, 100%);
   font-size: 13px;
   border: none;
   border-radius: 5px;
-  margin-top: 20%;
-  margin-left: 80%;
+  margin-left: 84%;
+  margin-top: 30%;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
+.container .wrapper .body .button:hover {
+  background-color: hsla(213, 96%, 18%, 0.808);
 }/*# sourceMappingURL=home.css.map */
