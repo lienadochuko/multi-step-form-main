@@ -1,10 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/home.css'
 // import sidebar from '../assets/bg-sidebar-desktop.svg';
 import sidebar1 from '../assets/Untitled design.png';
 
 
 const Home = () => {
+    const initValue = {
+        name: "",
+        email: "",
+        phone: ""
+    }
+    let navigator = useNavigate();
+
+    const [form, formValue] = useState(initValue)
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setisSubmit] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
+
+    const handleFocus = () => {
+        setIsFocused(true);
+    };
+
+    const handleBlur = () => {
+        setIsFocused(false);
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(form));
+        setisSubmit(true)
+    };
+
+    useEffect(() => {
+        console.log(form);
+        console.log(isSubmit);
+        console.log(formErrors);
+        // formValue(initValue);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            navigator('./Page2', { state: form })
+        }
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [formErrors])
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        formValue({ ...form, [name]: value });        
+    };
+
+    const validate = (values) => {
+        const errors = {};
+        if (!values.name) {
+            errors.name = "This field is required"
+        }
+        if (!values.email) {
+            errors.email = "This field is required"
+        }
+        if (!values.phone) {
+            errors.phone = "This field is required"
+        }
+        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+            errors.email = "This field is required"
+        }
+        return errors;
+    }
+
     return (
         <div className="container">
             <div className="wrapper">
@@ -45,41 +107,46 @@ const Home = () => {
                 <div className="body">
                     <span className="title">Personal info</span>
                     <span className="instruction">Please provide your name, email address, and phone number</span>
-                    <label className="label">Name</label>
-                    <input
-                        type="text"
-                        name="Name"
-                        className="Name"
-                        maxLength={35}
-                        placeholder="Venessa Mint"
-                    // value={form.email}
-                    // onChange={handleChange}
-                    // style={{ border: formErrors.email ? '1px solid #FF6257' : '', color: formErrors.email ? '#FF6257' : '', backgroundColor: formErrors.email ? '#ff625741' : '' }}
-                    />
-                    <label className="label">Email Address</label>
-                    <input
-                        type="text"
-                        name="email"
-                        className="email"
-                        maxLength={35}
-                        placeholder="venessamint@"
-                    // value={form.email}
-                    // onChange={handleChange}
-                    // style={{ border: formErrors.email ? '1px solid #FF6257' : '', color: formErrors.email ? '#FF6257' : '', backgroundColor: formErrors.email ? '#ff625741' : '' }}
-                    />
-                    <label className="label">Phone Number</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        className="phone"
-                        maxLength={35}
-                        placeholder="e.g +1 234 567 890"
-                    // value={form.email}
-                    // onChange={handleChange}
-                    // style={{ border: formErrors.email ? '1px solid #FF6257' : '', color: formErrors.email ? '#FF6257' : '', backgroundColor: formErrors.email ? '#ff625741' : '' }}
-                    />
+                    <form onSubmit={handleSubmit} className="form">
+                        <span className="label_error"><label className="label">Name</label> <span className="error">{formErrors.name}</span></span>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            className="name"
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                            maxLength={35}
+                            placeholder="Venessa Mint"
+                            value={form.name}
+                            onChange={handleChange}
+                            style={{ border: formErrors.name ? '1px solid #FF6257' : '', color: formErrors.name ? '#FF6257' : ''}}
+                        />
+                        <span className="label_error"><label className="label">Email Address</label> <span className="error">{formErrors.email}</span></span>
+                        <input
+                            type="text"
+                            name="email"
+                            className="email"
+                            maxLength={35}
+                            placeholder="venessamint@"
+                            value={form.email}
+                            onChange={handleChange}
+                            style={{ border: formErrors.email ? '1px solid #FF6257' : '', color: formErrors.email ? '#FF6257' : '' }}
+                        />
+                        <span className="label_error"><label className="label">Phone Number</label> <span className="error">{formErrors.phone}</span></span>
+                        <input
+                            type="text"
+                            name="phone"
+                            className="phone"
+                            maxLength={12}
+                            placeholder="e.g +1 234 567 890"
+                            value={form.phone}
+                            onChange={handleChange}
+                            style={{ border: formErrors.phone ? '1px solid #FF6257' : '', color: formErrors.phone ? '#FF6257' : '' }}
+                        />
 
-                    <button className="button">Next Step</button>
+                        <button className="button">Next Step</button>
+                    </form>
                 </div>
             </div>
         </div>

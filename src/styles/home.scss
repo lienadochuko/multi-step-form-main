@@ -178,55 +178,81 @@ $Black: #000000;
                 font-family: 'Ubuntu', sans-serif;
             }
 
-            .label {
-                height: 5%;
-                display: flex;
-                align-items: flex-end;
-                font-weight: 500;
-                color: $marine-blue;
-                font-size: 13px;
-                font-family: 'Ubuntu', sans-serif;
-            }
+            form {
+                width: 96%;
+                height: 100%;
 
-            input {
-                height: 8%;
-                font-weight: 700;
-                color: $marine-blue;
-                font-size: 13px;
-                margin-top: 1%;
-                margin-bottom: 3%;
-                padding-left: 2%;
-                border: 2px solid $Light-gray;
-                border-radius: 8px;
-                font-family: 'Ubuntu', sans-serif;
+                .label_error {
+                    height: 5%;
+                    display: flex;
+                    justify-content: space-between;
 
-                ::placeholder {
+
+                    .label {
+                        display: flex;
+                        align-items: flex-end;
+                        font-weight: 500;
+                        color: $marine-blue;
+                        font-size: 13px;
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+
+                    .error {
+                        display: flex;
+                        align-items: flex-end;
+                        font-weight: 700;
+                        color: $Strawberry-red;
+                        font-size: 13px;
+                        font-family: 'Ubuntu', sans-serif;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    height: 8%;
+                    font-weight: 700;
+                    color: $marine-blue;
+                    font-size: 13px;
+                    margin-top: 1%;
+                    margin-bottom: 3%;
+                    padding-left: 2%;
+                    border: 1px solid $Light-gray;
+                    border-radius: 8px;
+                    font-family: 'Ubuntu', sans-serif;
+                }
+
+                input::placeholder {
                     color: $Cool-gray;
                     font-weight: 500;
                     font-family: 'Ubuntu', sans-serif;
                 }
-            }
 
-            .button {
-                width: 16%;
-                height: 8%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $marine-blue;
-                font-weight: 500;
-                color: $White;
-                font-size: 13px;
-                border: none;
-                border-radius: 5px;
-                margin-left: 84%;
-                margin-top: 30%;
-                font-family: 'Ubuntu', sans-serif; 
-                cursor: pointer;
-            }
+                input:focus {
+                    outline: none;
+                    border: 1px solid $Pastel-blue;
+                }
+                  
+                .button {
+                    width: 16%;
+                    height: 8%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $marine-blue;
+                    font-weight: 500;
+                    color: $White;
+                    font-size: 13px;
+                    border: none;
+                    border-radius: 5px;
+                    margin-left: 84%;
+                    margin-top: 30%;
+                    font-family: 'Ubuntu', sans-serif;
+                    cursor: pointer;
+                }
 
-            .button:hover {
-                background-color: $marine-light-blue;
+                .button:hover {
+                    background-color: $marine-light-blue;
+                }
             }
         }
     }
