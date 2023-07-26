@@ -108,28 +108,7 @@ const Page2 = () => {
                         onChange={handleChange}
                         style={{ border: formErrors.name ? '1px solid #FF6257' : '', color: formErrors.name ? '#FF6257' : '', backgroundColor: formErrors.name ? '#ff625741' : '' }}
                     />
-                    <label className="label">Email Address</label>
-                    <input
-                        type="text"
-                        name="email"
-                        className="email"
-                        maxLength={35}
-                        placeholder="venessamint@"
-                    value={form.email}
-                    onChange={handleChange}
-                    style={{ border: formErrors.email ? '1px solid #FF6257' : '', color: formErrors.email ? '#FF6257' : '', backgroundColor: formErrors.email ? '#ff625741' : '' }}
-                    />
-                    <label className="label">Phone Number</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        className="phone"
-                        maxLength={35}
-                        placeholder="e.g +1 234 567 890"
-                    value={form.phone}
-                    onChange={handleChange}
-                    style={{ border: formErrors.phone ? '1px solid #FF6257' : '', color: formErrors.phone ? '#FF6257' : '', backgroundColor: formErrors.phone ? '#ff625741' : '' }}
-                    />
+                    
 
                     <button className="button">Next Step</button>
                     </form>
