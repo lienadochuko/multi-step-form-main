@@ -112,7 +112,7 @@ const Page2 = () => {
 
                     <button className="button">Next Step</button>
                     </form>
-                </div>
+                </div> 
             </div>
         </div>
     );
