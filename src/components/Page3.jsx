@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation,  } from "react-router-dom";
+// useNavigate
 import '../styles/Page2.css'
 import pro from '../assets/icon-pro.svg';
 import advanced from '../assets/icon-advanced.svg';
@@ -8,18 +9,17 @@ import arcade from '../assets/icon-arcade.svg';
 import sidebar1 from '../assets/Untitled design.png';
 
 
-const Page2 = () => {
+const Page3 = () => {
     // const initValue = {
     //     name: "",
     //     email: "",
     //     phone: ""
     // }
-    let navigator = useNavigate();
+    // let navigator = useNavigate();
     let location = useLocation();
+    const { formValue, formValue1, formValue2 } = location.state;
 
-    const [formValue, setFormValue] = useState();
-    const [formValue1, setFormValue1] = useState('');
-    const [formValue2, setFormValue2] = useState('');
+    // const [form, formValue] = useState();
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setisSubmit] = useState(false);
     const [ischeck, setCheck] = useState(false);
@@ -28,7 +28,7 @@ const Page2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(selectedOption));
-        // console.log('Selected option:', selectedOption);
+        console.log('Selected option:', selectedOption);
         setisSubmit(true)
     };
 
@@ -37,34 +37,26 @@ const Page2 = () => {
     };
 
     useEffect(() => {
-        // console.log(selectedOption);
-        // console.log(isSubmit);
-        // console.log(formErrors);
-        // console.log(formValue);
-        // console.log(formValue1);
-        setFormValue(location.state);
-        setFormValue1(selectedOption);
-        setFormValue2(String(ischeck));
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            const statesToPass = {
-                formValue: formValue,
-                formValue1: formValue1,                
-                formValue2: formValue2,
-            };
-            navigator('../Page3', { state: statesToPass });
-        }
+        console.log(selectedOption);
+        console.log(isSubmit);
+        console.log(formErrors);
+        // formValue(initValue);
+        // if (Object.keys(formErrors).length === 0 && isSubmit) {
+        //     navigator('../', { state: form })
+        // }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [formErrors, selectedOption, ischeck])
+        [formErrors])
+
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     formValue({ ...form, [name]: value });
+    // };
 
     const handleOptionChange = (e) => {
         setSelectedOption(e.target.value);
-    };
-
-    const goBack = (e) => {
-        navigator('../');        
-    }
-
+      };
+  
 
     const validate = (values) => {
         const errors = {};
@@ -86,7 +78,7 @@ const Page2 = () => {
                         </div>
                     </div>
 
-                    <div className="steps1">
+                    <div className="steps">
                         <div className="number">2</div>
                         <div className="steps2">
                             <span className="stepNo">STEP 2</span>
@@ -94,7 +86,7 @@ const Page2 = () => {
                         </div>
                     </div>
 
-                    <div className="steps">
+                    <div className="steps1">
                         <div className="number">3</div>
                         <div className="steps2">
                             <span className="stepNo">STEP 3</span>
@@ -112,81 +104,79 @@ const Page2 = () => {
                 </div>
                 <div className="body">
                     <span className="title">Select your plan</span>
-                    <text>{selectedOption}</text>
+                    <p>formValue: {formValue.name} <br /> formValue: {formValue.email} <br /> formValue: {formValue.phone}</p>
+                    <p>formValue1: {formValue1}</p> <p>formValue1: {formValue2}</p>
                     <span className="instruction">You have the option of monthly or yearly billing</span>
-                    <form onSubmit={handleSubmit} className="form1">
+                    <form onSubmit={handleSubmit} className="form1">                      
                         <text className="errorText">{formErrors.options}</text>
                         <div className="Wrapper">
                             <div className="planWrapper">
-                                <input type="radio"
-                                    name="radioed"
-                                    id="myCheckbox1"
-                                    value="option1"
-                                    checked={selectedOption === 'option1'}
-                                    onChange={handleOptionChange}
+                                <input type="radio" 
+                                name="radioed" 
+                                id="myCheckbox1"
+                                value="option1"
+                                checked={selectedOption === 'option1'}
+                                onChange={handleOptionChange}
                                 />
                                 <label for="myCheckbox1">
                                     <img src={arcade} alt="checkbox" />
-                                    <div className="plan" style={{ height: ischeck ? '' : '30%' }}>
+                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
                                         <span className="planName">Arcade</span>
                                         <span className="planPrice">{ischeck ? '$90/yr' : '$9/mo'}</span>
-                                        <span className="planbonus" style={{ display: ischeck ? '' : 'none' }}>2 months free</span>
+                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
                                     </div>
                                 </label>
                             </div>
                             <div className="planWrapper">
-                                <input type="radio"
-                                    name="radioed"
-                                    id="myCheckbox2"
-                                    value="option2"
-                                    checked={selectedOption === 'option2'}
-                                    onChange={handleOptionChange} />
+                                <input type="radio" 
+                                name="radioed"
+                                 id="myCheckbox2"
+                                 value="option2"
+                                 checked={selectedOption === 'option2'}
+                                 onChange={handleOptionChange} />
                                 <label for="myCheckbox2">
                                     <img src={advanced} alt="checkbox" />
-                                    <div className="plan" style={{ height: ischeck ? '' : '30%' }}>
+                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
                                         <span className="planName">Advanced</span>
                                         <span className="planPrice">{ischeck ? '$120/yr' : '$12/mo'}</span>
-                                        <span className="planbonus" style={{ display: ischeck ? '' : 'none' }}>2 months free</span>
+                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
                                     </div>
                                 </label>
                             </div>
                             <div className="planWrapper">
-                                <input type="radio"
-                                    name="radioed"
-                                    id="myCheckbox3"
-                                    value="option3"
-                                    checked={selectedOption === 'option3'}
-                                    onChange={handleOptionChange} />
+                                <input type="radio" 
+                                name="radioed" 
+                                id="myCheckbox3" 
+                                value="option3"
+                                checked={selectedOption === 'option3'}
+                                onChange={handleOptionChange}/>
                                 <label for="myCheckbox3">
                                     <img src={pro} alt="checkbox" />
-                                    <div className="plan" style={{ height: ischeck ? '' : '30%' }}>
+                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
                                         <span className="planName">Pro</span>
                                         <span className="planPrice">{ischeck ? '$150/yr' : '$15/mo'}</span>
-                                        <span className="planbonus" style={{ display: ischeck ? '' : 'none' }}>2 months free</span>
+                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
                                     </div>
                                 </label>
                             </div>
-                        </div>
+                        </div>  
                         <div className="monthYear">
-                            <p>
-                                <text>Monthly</text>
-                                <text>Yearly</text>
-                            </p>
+                                <p>
+                                    <text>Monthly</text>
+                                    <text>Yearly</text>                                    
+                                </p>
                             <input type="checkbox"
                                 id="switch"
                                 class="checkbox"
                                 value={ischeck}
                                 onChange={handleToggle}
-                            />
+                               />
 
                             <label for="switch"
-                                class="toggle">
+                                class="toggle">                                
                             </label>
                         </div>
-                        <div className="buttonHolder1">
-                            <button className="button3" onClick={goBack}>Go Back</button>
-                            <button className="button2">Next Step</button>
-                        </div>
+                        <button className="button">Next Step</button>
                     </form>
                 </div>
             </div>
@@ -194,4 +184,4 @@ const Page2 = () => {
     );
 }
 
-export default Page2;
+export default Page3;

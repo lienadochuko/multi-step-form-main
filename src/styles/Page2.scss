@@ -1,0 +1,427 @@
+//font-family
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+//primary
+$marine-blue: hsl(213, 96%, 18%);
+$marine-light-blue: hsla(213, 96%, 18%, 0.808);
+$Purplish-blue: hsl(243, 100%, 62%);
+$Pastel-blue: hsl(228, 100%, 84%);
+$Light-Pastel-blue: hsla(228, 100%, 84%, 0.171);
+$Light-blue: hsl(206, 94%, 87%);
+$Strawberry-red: hsl(354, 84%, 57%);
+
+//neutral
+$Cool-gray: hsl(231, 11%, 63%);
+$Light-gray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+$Black: #000000;
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: $Magnolia;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        width: 60%;
+        height: 80%;
+        position: relative;
+        background-color: $White;
+        border-radius: 20px;
+        padding-left: 0.5%;
+        display: flex;
+        align-items: center;
+        font-family: 'Ubuntu', sans-serif;
+
+        .sidebar {
+            width: 26%;
+            height: 96%;
+            float: left;
+        }
+
+        .stepswrapper {
+            width: 25.2%;
+            height: 46%;
+            position: absolute;
+            top: 14%;
+            // background-color: rgb(24, 117, 197);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            z-index: 1000;
+
+            .steps {
+                width: 80%;
+                height: 10%;
+                // background-color: aliceblue;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 10%;
+                margin-bottom: 10%;
+                align-items: center;
+
+                .number {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid $White;
+                    border-radius: 20px;
+                    color: $White;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 13px;
+                    font-weight: 500;
+                    margin-right: 5%;
+                }
+
+                .steps2 {
+                    display: flex;
+                    flex-direction: column;
+
+                    .stepNo {
+                        color: $Light-gray;
+                        font-size: 12px;
+                        font-weight: 500;
+                        opacity: 0.7;
+                    }
+
+                    .stepTitle {
+                        margin-top: 5%;
+                        color: $White;
+                        font-family: 'Ubuntu', sans-serif;
+                        font-size: 13px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .steps1 {
+                width: 80%;
+                height: 10%;
+                // background-color: aliceblue;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 10%;
+                margin-bottom: 10%;
+                align-items: center;
+
+                .number {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $Light-blue;
+                    border: 1px solid $Light-blue;
+                    border-radius: 20px;
+                    color: $Black;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 13px;
+                    font-weight: 700;
+                    margin-right: 5%;
+                }
+
+                .steps2 {
+                    display: flex;
+                    flex-direction: column;
+
+                    .stepNo {
+                        color: $Light-gray;
+                        font-size: 12px;
+                        font-weight: 500;
+                        opacity: 0.7;
+                    }
+
+                    .stepTitle {
+                        margin-top: 5%;
+                        color: $White;
+                        font-family: 'Ubuntu', sans-serif;
+                        font-size: 13px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+
+        .body {
+            width: 60%;
+            height: 80%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10%;
+            padding-right: 5%;
+            padding-top: 10%;
+            padding-bottom: 5%;
+            font-family: 'Ubuntu', sans-serif;
+            z-index: 9999;
+
+            .title {
+                font-weight: 700;
+                color: $marine-blue;
+                font-size: 28px;
+                font-family: 'Ubuntu', sans-serif;
+            }
+
+            .instruction {
+                font-weight: 400;
+                color: $Cool-gray;
+                font-size: 13px;
+                // line-height: 20%;
+                margin-bottom: 5%;
+                font-family: 'Ubuntu', sans-serif;
+            }
+
+            .form1 {
+                width: 90%;
+                height: 100%;
+                padding: 0%;
+                margin: 0%;
+                font-family: 'Ubuntu', sans-serif;
+                // background-color: #000000;
+
+                .errorText {
+                    color: $Strawberry-red;
+                    font-weight: 700;
+                    font-size: 10px;
+                }
+
+                .monthYear {
+                    width: 98%;
+                    height: 10%;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    background-color: $Light-Pastel-blue;
+                    border-radius: 10px;
+
+                    .toggle {
+                        position: relative;
+                        display: inline-block;
+                        width: 12%;
+                        height: 58%;
+                        background-color: $marine-blue;
+                        border-radius: 30px;
+                        border: 2px solid $marine-blue;
+                    }
+
+                    /* After slide changes */
+                    .toggle:after {
+                        content: '';
+                        position: absolute;
+                        width: 48%;
+                        height: 96%;
+                        border-radius: 50%;
+                        background-color: $White;
+                        top: 3%;
+                        left: 3%;
+                        transition: all 0.5s;
+                    }
+
+                    /* Toggle text */
+                    p {
+                        width: 40%;
+                        position: absolute;
+                        display: flex;
+                        justify-content: space-between;
+                        font-family: 'Ubuntu', sans-serif;
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: $Cool-gray;
+                        margin: 0%;
+                        margin-left: -3%;
+                        // background-color: #992020;
+                        // background-color: #000000;
+                    }
+
+                    /* Checkbox checked effect */
+                    .checkbox:checked+.toggle::after {
+                        left: 50%;
+                    }
+
+                    /* Checkbox checked toggle label bg color */
+                    .checkbox:checked+.toggle {
+                        background-color: $marine-blue;
+                    }
+
+                    /* Checkbox vanished */
+                    .checkbox {
+                        display: none;
+                    }
+                }
+
+                .buttonHolder1 {
+                    height: 40%;
+                    width: 98%;
+                    display: flex;
+                    // background-color: #000000; 
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .button3 {
+                        width: 25%;
+                        height: 20%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $White;
+                        font-weight: 700;
+                        color: $marine-blue;
+                        font-size: 13px;
+                        border: none;
+                        border-radius: 5px;
+                        font-family: 'Ubuntu', sans-serif;
+                        cursor: pointer;
+                    }
+
+                    .button2 {
+                        width: 25%;
+                        height: 20%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $marine-blue;
+                        font-weight: 500;
+                        color: $White;
+                        font-size: 13px;
+                        border: none;
+                        border-radius: 5px;
+                        font-family: 'Ubuntu', sans-serif;
+                        cursor: pointer;
+                    }
+
+                    .button:hover {
+                        background-color: $marine-light-blue;
+                    }
+
+                }
+            }
+
+            .Wrapper {
+                width: 100%;
+                height: 50%;
+                // border: 1px solid black;
+                display: flex;
+                padding: 0%;
+                margin: 0%;
+                // flex-direction: column;
+                justify-content: space-between;
+
+                .planWrapper {
+                    width: 70%;
+                    height: 85%;
+                    display: flex;
+                    padding: 0%;
+                    margin: 0%;
+                    // background-color: #000000;
+
+                    input[type="radio"][id^="myCheckbox"] {
+                        display: none;
+                    }
+
+                    label {
+                        width: 80%;
+                        height: 100%;
+                        border: 2px solid $Light-gray;
+                        border-radius: 10px;
+                        padding-left: 10px;
+                        display: block;
+                        position: relative;
+                        margin: 0px;
+                        cursor: pointer;
+                        transition-duration: 0.2s;
+                        // transform-origin: 50% 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+
+                    label:before {
+                        background-color: white;
+                        color: white;
+                        content: " ";
+                        display: block;
+                        // border-radius: 50%;
+                        border: 1px solid grey;
+                        position: absolute;
+                        // top: -5px;
+                        // left: -5px;
+                        // width: 25px;
+                        // height: 25px;
+                        text-align: center;
+                        line-height: 28px;
+                        transition-duration: 0.4s;
+                        transform: scale(0);
+                    }
+
+                    img {
+                        height: 35%;
+                        width: 35%;
+                        transition-duration: 0.2s;
+                        transform-origin: 50% 50%;
+                    }
+
+
+                    :checked+label {
+                        background-color: $Light-Pastel-blue;
+                        border: 2px solid $Pastel-blue;
+                        border-radius: 10px;
+                    }
+
+                    :checked+label:before {
+                        content: "";
+                        display: none;
+                        background-color: none;
+                        border: none;
+                        transform: scale(1);
+                    }
+
+                    :checked+label img {
+                        transform: scale(0.9);
+                        /* box-shadow: 0 0 5px #333; */
+                        z-index: -1;
+                    }
+
+                    .plan {
+                        height: 40%;
+                        display: flex;
+                        flex-direction: column;
+                        // background-color: #000000;
+                        justify-content: space-evenly;
+
+
+                        .planName {
+                            font-family: 'Ubuntu', sans-serif;
+                            font-weight: 700;
+                            color: $marine-blue;
+                            font-size: 16px;
+                        }
+
+                        .planPrice {
+                            font-family: 'Ubuntu', sans-serif;
+                            font-weight: 500;
+                            color: $Cool-gray;
+                            font-size: 13px;
+                        }
+
+                        .planbonus {
+                            font-family: 'Ubuntu', sans-serif;
+                            font-weight: 500;
+                            color: $marine-blue;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -16,15 +16,15 @@ const Home = () => {
     const [form, formValue] = useState(initValue)
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setisSubmit] = useState(false);
-    const [isFocused, setIsFocused] = useState(false);
+    // const [isFocused, setIsFocused] = useState(false);
 
-    const handleFocus = () => {
-        setIsFocused(true);
-    };
+    // const handleFocus = () => {
+    //     setIsFocused(true);
+    // };
 
-    const handleBlur = () => {
-        setIsFocused(false);
-    };
+    // const handleBlur = () => {
+    //     setIsFocused(false);
+    // };
 
 
     const handleSubmit = (e) => {
@@ -34,9 +34,9 @@ const Home = () => {
     };
 
     useEffect(() => {
-        console.log(form);
-        console.log(isSubmit);
-        console.log(formErrors);
+        // console.log(form);
+        // console.log(isSubmit);
+        // console.log(formErrors);
         // formValue(initValue);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             navigator('./Page2', { state: form })
@@ -114,8 +114,8 @@ const Home = () => {
                             name="name"
                             id="name"
                             className="name"
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
+                            // onFocus={handleFocus}
+                            // onBlur={handleBlur}
                             maxLength={35}
                             placeholder="Venessa Mint"
                             value={form.name}
@@ -145,7 +145,10 @@ const Home = () => {
                             style={{ border: formErrors.phone ? '1px solid #FF6257' : '', color: formErrors.phone ? '#FF6257' : '' }}
                         />
 
-                        <button className="button">Next Step</button>
+                    <div className="buttonHolder">
+                            <button className="button1">Go Back</button>
+                            <button className="button">Next Step</button>
+                        </div>
                     </form>
                 </div>
             </div>
