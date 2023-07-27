@@ -112,10 +112,9 @@ const Page2 = () => {
                 </div>
                 <div className="body">
                     <span className="title">Select your plan</span>
-                    <text>{selectedOption}</text>
                     <span className="instruction">You have the option of monthly or yearly billing</span>
                     <form onSubmit={handleSubmit} className="form1">
-                        <text className="errorText">{formErrors.options}</text>
+                        <span className="errorText">{formErrors.options}</span>
                         <div className="Wrapper">
                             <div className="planWrapper">
                                 <input type="radio"
@@ -169,8 +168,8 @@ const Page2 = () => {
                         </div>
                         <div className="monthYear">
                             <p>
-                                <text>Monthly</text>
-                                <text>Yearly</text>
+                                <span>Monthly</span>
+                                <span>Yearly</span>
                             </p>
                             <input type="checkbox"
                                 id="switch"

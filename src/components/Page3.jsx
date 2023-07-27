@@ -1,72 +1,119 @@
 import React, { useEffect, useState } from "react";
-import { useLocation,  } from "react-router-dom";
-// useNavigate
-import '../styles/Page2.css'
-import pro from '../assets/icon-pro.svg';
-import advanced from '../assets/icon-advanced.svg';
-import arcade from '../assets/icon-arcade.svg';
-
+import { useLocation, useNavigate } from "react-router-dom";
+import '../styles/Page3.css'
 import sidebar1 from '../assets/Untitled design.png';
 
 
 const Page3 = () => {
-    // const initValue = {
-    //     name: "",
-    //     email: "",
-    //     phone: ""
-    // }
-    // let navigator = useNavigate();
+    let navigator = useNavigate();
     let location = useLocation();
-    const { formValue, formValue1, formValue2 } = location.state;
+    const {
+        formValue,
+        formValue1,
+        formValue2 } = location.state;
 
-    // const [form, formValue] = useState();
     const [formErrors, setFormErrors] = useState({});
+    const [formValues4, setFormValue4] = useState([]);
     const [isSubmit, setisSubmit] = useState(false);
-    const [ischeck, setCheck] = useState(false);
+    const [isSubmit1, setisSubmit1] = useState(false);
+    // const [ischeck, setCheck] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption2, setSelectedOption2] = useState('');
+    const [selectedOption3, setSelectedOption3] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(selectedOption));
-        console.log('Selected option:', selectedOption);
+        setFormErrors(validate(selectedOption, selectedOption2, selectedOption3));
+        console.log(totalValue);
         setisSubmit(true)
     };
 
-    const handleToggle = (e) => {
-        setCheck(!ischeck);
-    };
-
     useEffect(() => {
-        console.log(selectedOption);
-        console.log(isSubmit);
-        console.log(formErrors);
-        // formValue(initValue);
-        // if (Object.keys(formErrors).length === 0 && isSubmit) {
-        //     navigator('../', { state: form })
-        // }
+        setFormValue4(totalValue);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            const statesToPass = {
+                formValue: formValue,
+                formValue1: formValue1,
+                formValue2: formValue2,
+                formValues4: formValues4
+            };
+            navigator('../Page3', { state: statesToPass });
+            console.log(statesToPass)
+        }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [formErrors])
+        [formErrors, selectedOption, selectedOption2, selectedOption3])
 
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     formValue({ ...form, [name]: value });
-    // };
 
-    const handleOptionChange = (e) => {
-        setSelectedOption(e.target.value);
-      };
-  
+
+    const goBack1 = (e) => {
+        e.preventDefault();
+        setisSubmit1(true);
+    }
+
+    
+    useEffect(() => {
+        setFormValue4(totalValue);
+        if (isSubmit1) {
+            const statesToPass = {
+                formValue: formValue,
+                formValue1: formValue1,
+                formValue2: formValue2,
+                formValues4: formValues4
+            };
+            navigator('../Page2', { state: statesToPass });
+            console.log(statesToPass)
+        }
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [selectedOption, selectedOption2, selectedOption3])
 
     const validate = (values) => {
         const errors = {};
-        if (!values) {
+        if (selectedOption === '' && selectedOption2 === '' && selectedOption3 === '') {
             errors.options = "Please select an plan"
         }
         return errors;
     }
+
+    const totalValue = {
+        value1: selectedOption,
+        value2: selectedOption2,
+        value3: selectedOption3
+    }
+
+    const handleChange = (e) => {
+        // Destructuring
+        const { value, checked } = e.target;
+        console.log(`${value} is ${checked}`);
+        if (checked === false) {
+            setSelectedOption('');
+        } else {
+            setSelectedOption(value);
+        }
+    }
+    const handleChange2 = (e) => {
+        // Destructuring
+        const { value, checked } = e.target;
+        console.log(`${value} is ${checked}`);
+        if (checked === false) {
+            setSelectedOption2('');
+        } else {
+            setSelectedOption2(value);
+        }
+    }
+    const handleChange3 = (e) => {
+        // Destructuring
+        const { value, checked } = e.target;
+        console.log(`${value} is ${checked}`);
+        if (checked === false) {
+            setSelectedOption3('');
+        } else {
+            setSelectedOption3(value);
+        }
+    }
     return (
-        <div className="container">
+        <div className="container3">
             <div className="wrapper">
                 <img src={sidebar1} alt="sidebar" className="sidebar" />
                 <div className="stepswrapper">
@@ -103,80 +150,65 @@ const Page3 = () => {
                     </div>
                 </div>
                 <div className="body">
-                    <span className="title">Select your plan</span>
-                    <p>formValue: {formValue.name} <br /> formValue: {formValue.email} <br /> formValue: {formValue.phone}</p>
-                    <p>formValue1: {formValue1}</p> <p>formValue1: {formValue2}</p>
-                    <span className="instruction">You have the option of monthly or yearly billing</span>
-                    <form onSubmit={handleSubmit} className="form1">                      
-                        <text className="errorText">{formErrors.options}</text>
-                        <div className="Wrapper">
+                    <span className="title">Pick add-ons Add-ons</span>
+                    {/* <p>formValue: {formValue.name} <br /> formValue: {formValue.email} <br /> formValue: {formValue.phone} <br/>
+                formValue1: {formValue1} <br/>formValue1: {formValue2} <br/> {totalValue.value1}  {totalValue.value2}  {totalValue.value3}</p> */}
+                    <span className="instruction">help enhance your gaming experience</span>
+                    <form onSubmit={handleSubmit} className="form1">
+                        <span className="errorText">{formErrors.options}</span>
+                        <div className="Wrapper1">
                             <div className="planWrapper">
-                                <input type="radio" 
-                                name="radioed" 
-                                id="myCheckbox1"
-                                value="option1"
-                                checked={selectedOption === 'option1'}
-                                onChange={handleOptionChange}
+                                <input type="checkbox"
+                                    name="radioed"
+                                    id="myCheckbox4"
+                                    value="option1"
+                                    // checked={selectedOption === 'option1'}
+                                    onChange={handleChange}
                                 />
-                                <label for="myCheckbox1">
-                                    <img src={arcade} alt="checkbox" />
-                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
-                                        <span className="planName">Arcade</span>
-                                        <span className="planPrice">{ischeck ? '$90/yr' : '$9/mo'}</span>
-                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
-                                    </div>
+                                <label for="myCheckbox4">
+                                    <div className="plan1" >
+                                        <span className="planName">Online service</span>
+                                        <span className="planPrice">Access to multiplayer games</span>
+                                    </div>                                     
+                                     <span className="Prices">{ formValue2 === 'false' ? '+$1/mo' : '+$10/yr' }</span>
                                 </label>
                             </div>
                             <div className="planWrapper">
-                                <input type="radio" 
-                                name="radioed"
-                                 id="myCheckbox2"
-                                 value="option2"
-                                 checked={selectedOption === 'option2'}
-                                 onChange={handleOptionChange} />
-                                <label for="myCheckbox2">
-                                    <img src={advanced} alt="checkbox" />
-                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
-                                        <span className="planName">Advanced</span>
-                                        <span className="planPrice">{ischeck ? '$120/yr' : '$12/mo'}</span>
-                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
-                                    </div>
+                                <input type="checkbox"
+                                    name="radioed"
+                                    id="myCheckbox5"
+                                    value="option2"
+                                    // checked={selectedOption === 'option2'}
+                                    onChange={handleChange2} />
+                                <label for="myCheckbox5">
+                                    <div className="plan1" >
+                                        <span className="planName">Larger storage</span>
+                                        <span className="planPrice">Extra 1TB of cloud save</span>
+                                    </div>                                    
+                                     <span className="Prices">{ formValue2 === 'false' ? '+$2/mo' : '+$20/yr' }</span>
                                 </label>
                             </div>
                             <div className="planWrapper">
-                                <input type="radio" 
-                                name="radioed" 
-                                id="myCheckbox3" 
-                                value="option3"
-                                checked={selectedOption === 'option3'}
-                                onChange={handleOptionChange}/>
-                                <label for="myCheckbox3">
-                                    <img src={pro} alt="checkbox" />
-                                    <div className="plan" style={{height:ischeck ? '' : '30%'}}>
-                                        <span className="planName">Pro</span>
-                                        <span className="planPrice">{ischeck ? '$150/yr' : '$15/mo'}</span>
-                                        <span className="planbonus" style={{display:ischeck ? '' : 'none'}}>2 months free</span>
-                                    </div>
+                                <input type="checkbox"
+                                    name="radioed"
+                                    id="myCheckbox6"
+                                    value="option3"
+                                    // checked={selectedOption === 'option3'}
+                                    onChange={handleChange3} />
+                                <label for="myCheckbox6">
+                                    <div className="plan1" >
+                                        <span className="planName">Customizable Profile</span>
+                                        <span className="planPrice">Custom theme on your profile</span>
+                                    </div>                                
+                                     <span className="Prices">{ formValue2 === 'false' ? '+$2/mo' : '+$20/yr' }</span>
                                 </label>
                             </div>
-                        </div>  
-                        <div className="monthYear">
-                                <p>
-                                    <text>Monthly</text>
-                                    <text>Yearly</text>                                    
-                                </p>
-                            <input type="checkbox"
-                                id="switch"
-                                class="checkbox"
-                                value={ischeck}
-                                onChange={handleToggle}
-                               />
-
-                            <label for="switch"
-                                class="toggle">                                
-                            </label>
                         </div>
-                        <button className="button">Next Step</button>
+
+                        <div className="buttonHolder1">
+                            <button className="button5" onClick={goBack1}>Go Back</button>
+                            <button className="button4">Next Step</button>
+                        </div>
                     </form>
                 </div>
             </div>

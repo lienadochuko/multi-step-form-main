@@ -43,7 +43,7 @@ const Home = () => {
         }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [formErrors])
+        [formErrors, form])
 
     const handleChange = (e) => {
         const { name, value } = e.target;

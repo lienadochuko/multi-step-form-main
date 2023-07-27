@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Ubuntu:wght@400;500;700&display=swap");
-.container {
+.container3 {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 }
-.container .wrapper {
+.container3 .wrapper {
   width: 60%;
   height: 80%;
   position: relative;
@@ -19,12 +19,12 @@
   align-items: center;
   font-family: "Ubuntu", sans-serif;
 }
-.container .wrapper .sidebar {
+.container3 .wrapper .sidebar {
   width: 26%;
   height: 96%;
   float: left;
 }
-.container .wrapper .stepswrapper {
+.container3 .wrapper .stepswrapper {
   width: 25.2%;
   height: 46%;
   position: absolute;
@@ -34,7 +34,7 @@
   justify-content: flex-start;
   z-index: 1000;
 }
-.container .wrapper .stepswrapper .steps {
+.container3 .wrapper .stepswrapper .steps {
   width: 80%;
   height: 10%;
   display: flex;
@@ -43,7 +43,7 @@
   margin-bottom: 10%;
   align-items: center;
 }
-.container .wrapper .stepswrapper .steps .number {
+.container3 .wrapper .stepswrapper .steps .number {
   width: 30px;
   height: 30px;
   display: flex;
@@ -57,24 +57,24 @@
   font-weight: 500;
   margin-right: 5%;
 }
-.container .wrapper .stepswrapper .steps .steps2 {
+.container3 .wrapper .stepswrapper .steps .steps2 {
   display: flex;
   flex-direction: column;
 }
-.container .wrapper .stepswrapper .steps .steps2 .stepNo {
+.container3 .wrapper .stepswrapper .steps .steps2 .stepNo {
   color: hsl(229, 24%, 87%);
   font-size: 12px;
   font-weight: 500;
   opacity: 0.7;
 }
-.container .wrapper .stepswrapper .steps .steps2 .stepTitle {
+.container3 .wrapper .stepswrapper .steps .steps2 .stepTitle {
   margin-top: 5%;
   color: hsl(0, 0%, 100%);
   font-family: "Ubuntu", sans-serif;
   font-size: 13px;
   font-weight: 700;
 }
-.container .wrapper .stepswrapper .steps1 {
+.container3 .wrapper .stepswrapper .steps1 {
   width: 80%;
   height: 10%;
   display: flex;
@@ -83,7 +83,7 @@
   margin-bottom: 10%;
   align-items: center;
 }
-.container .wrapper .stepswrapper .steps1 .number {
+.container3 .wrapper .stepswrapper .steps1 .number {
   width: 30px;
   height: 30px;
   display: flex;
@@ -98,24 +98,24 @@
   font-weight: 700;
   margin-right: 5%;
 }
-.container .wrapper .stepswrapper .steps1 .steps2 {
+.container3 .wrapper .stepswrapper .steps1 .steps2 {
   display: flex;
   flex-direction: column;
 }
-.container .wrapper .stepswrapper .steps1 .steps2 .stepNo {
+.container3 .wrapper .stepswrapper .steps1 .steps2 .stepNo {
   color: hsl(229, 24%, 87%);
   font-size: 12px;
   font-weight: 500;
   opacity: 0.7;
 }
-.container .wrapper .stepswrapper .steps1 .steps2 .stepTitle {
+.container3 .wrapper .stepswrapper .steps1 .steps2 .stepTitle {
   margin-top: 5%;
   color: hsl(0, 0%, 100%);
   font-family: "Ubuntu", sans-serif;
   font-size: 13px;
   font-weight: 700;
 }
-.container .wrapper .body {
+.container3 .wrapper .body {
   width: 60%;
   height: 80%;
   position: relative;
@@ -128,96 +128,39 @@
   font-family: "Ubuntu", sans-serif;
   z-index: 9999;
 }
-.container .wrapper .body .title {
+.container3 .wrapper .body .title {
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 28px;
   font-family: "Ubuntu", sans-serif;
 }
-.container .wrapper .body .instruction {
+.container3 .wrapper .body .instruction {
   font-weight: 400;
   color: hsl(231, 11%, 63%);
   font-size: 13px;
   margin-bottom: 5%;
   font-family: "Ubuntu", sans-serif;
 }
-.container .wrapper .body .form1 {
+.container3 .wrapper .body .form1 {
   width: 90%;
   height: 100%;
   padding: 0%;
   margin: 0%;
   font-family: "Ubuntu", sans-serif;
 }
-.container .wrapper .body .form1 .errorText {
+.container3 .wrapper .body .form1 .errorText {
   color: hsl(354, 84%, 57%);
   font-weight: 700;
   font-size: 10px;
 }
-.container .wrapper .body .form1 .monthYear {
-  width: 98%;
-  height: 10%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background-color: hsla(228, 100%, 84%, 0.171);
-  border-radius: 10px;
-  /* After slide changes */
-  /* Toggle text */
-  /* Checkbox checked effect */
-  /* Checkbox checked toggle label bg color */
-  /* Checkbox vanished */
-}
-.container .wrapper .body .form1 .monthYear .toggle {
-  position: relative;
-  display: inline-block;
-  width: 12%;
-  height: 58%;
-  background-color: hsl(213, 96%, 18%);
-  border-radius: 30px;
-  border: 2px solid hsl(213, 96%, 18%);
-}
-.container .wrapper .body .form1 .monthYear .toggle:after {
-  content: "";
-  position: absolute;
-  width: 48%;
-  height: 96%;
-  border-radius: 50%;
-  background-color: hsl(0, 0%, 100%);
-  top: 3%;
-  left: 3%;
-  transition: all 0.5s;
-}
-.container .wrapper .body .form1 .monthYear p {
-  width: 40%;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  color: hsl(231, 11%, 63%);
-  margin: 0%;
-  margin-left: -3%;
-}
-.container .wrapper .body .form1 .monthYear .checkbox:checked + .toggle::after {
-  left: 50%;
-}
-.container .wrapper .body .form1 .monthYear .checkbox:checked + .toggle {
-  background-color: hsl(213, 96%, 18%);
-}
-.container .wrapper .body .form1 .monthYear .checkbox {
-  display: none;
-}
-.container .wrapper .body .form1 .buttonHolder1 {
-  height: 40%;
+.container3 .wrapper .body .form1 .buttonHolder1 {
+  height: 37%;
   width: 98%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-.container .wrapper .body .form1 .buttonHolder1 .button3 {
+.container3 .wrapper .body .form1 .buttonHolder1 .button5 {
   width: 25%;
   height: 20%;
   display: flex;
@@ -232,10 +175,10 @@
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
 }
-.container .wrapper .body .form1 .buttonHolder1 .button3:hover {
+.container3 .wrapper .body .form1 .buttonHolder1 .button5:hover {
   color: hsl(213, 96%, 18%);
 }
-.container .wrapper .body .form1 .buttonHolder1 .button2 {
+.container3 .wrapper .body .form1 .buttonHolder1 .button4 {
   width: 25%;
   height: 20%;
   display: flex;
@@ -250,29 +193,34 @@
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
 }
-.container .wrapper .body .form1 .buttonHolder1 .button2:hover {
+.container3 .wrapper .body .form1 .buttonHolder1 .button4:hover {
   background-color: hsla(213, 96%, 18%, 0.808);
 }
-.container .wrapper .body .Wrapper {
+.container3 .wrapper .body .Wrapper1 {
   width: 100%;
   height: 50%;
   display: flex;
   padding: 0%;
   margin: 0%;
+  flex-direction: column;
   justify-content: space-between;
 }
-.container .wrapper .body .Wrapper .planWrapper {
-  width: 70%;
-  height: 85%;
+.container3 .wrapper .body .Wrapper1 .planWrapper {
+  width: 98%;
+  height: 25%;
+  position: relative;
   display: flex;
+  align-items: center;
   padding: 0%;
   margin: 0%;
 }
-.container .wrapper .body .Wrapper .planWrapper input[type=radio][id^=myCheckbox] {
-  display: none;
+.container3 .wrapper .body .Wrapper1 .planWrapper input[type=checkbox][id^=myCheckbox] {
+  display: flex;
+  position: absolute;
+  margin-left: 5%;
 }
-.container .wrapper .body .Wrapper .planWrapper label {
-  width: 80%;
+.container3 .wrapper .body .Wrapper1 .planWrapper label {
+  width: 100%;
   height: 100%;
   border: 2px solid hsl(229, 24%, 87%);
   border-radius: 10px;
@@ -283,13 +231,15 @@
   cursor: pointer;
   transition-duration: 0.2s;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 5%;
 }
-.container .wrapper .body .Wrapper .planWrapper label:before {
+.container3 .wrapper .body .Wrapper1 .planWrapper label:before {
   background-color: white;
   color: white;
-  content: " ";
+  content: "";
   display: block;
   border: 1px solid grey;
   position: absolute;
@@ -298,50 +248,56 @@
   transition-duration: 0.4s;
   transform: scale(0);
 }
-.container .wrapper .body .Wrapper .planWrapper img {
+.container3 .wrapper .body .Wrapper1 .planWrapper img {
   height: 35%;
   width: 35%;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
 }
-.container .wrapper .body .Wrapper .planWrapper :checked + label {
+.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label {
   background-color: hsla(228, 100%, 84%, 0.171);
   border: 2px solid hsl(228, 100%, 84%);
   border-radius: 10px;
 }
-.container .wrapper .body .Wrapper .planWrapper :checked + label:before {
-  content: "";
+.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label:before {
+  content: " ";
   display: none;
   background-color: none;
   border: none;
   transform: scale(1);
 }
-.container .wrapper .body .Wrapper .planWrapper :checked + label img {
+.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label img {
   transform: scale(0.9);
   /* box-shadow: 0 0 5px #333; */
   z-index: -1;
 }
-.container .wrapper .body .Wrapper .planWrapper .plan {
+.container3 .wrapper .body .Wrapper1 .planWrapper .Prices {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: hsl(243, 100%, 62%);
+  font-size: 15px;
+}
+.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 {
   height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.container .wrapper .body .Wrapper .planWrapper .plan .planName {
+.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planName {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 16px;
 }
-.container .wrapper .body .Wrapper .planWrapper .plan .planPrice {
+.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planPrice {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   color: hsl(231, 11%, 63%);
   font-size: 13px;
 }
-.container .wrapper .body .Wrapper .planWrapper .plan .planbonus {
+.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planbonus {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   color: hsl(213, 96%, 18%);
   font-size: 13px;
-}/*# sourceMappingURL=Page2.css.map */
+}/*# sourceMappingURL=Page3.css.map */
