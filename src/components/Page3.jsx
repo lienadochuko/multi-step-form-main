@@ -10,13 +10,16 @@ const Page3 = () => {
     const {
         formValue,
         formValue1,
-        formValue2 } = location.state;
+        formValue2,
+        formValues15,
+        formValues14,
+        formValues13 } = location.state;
 
     const [formErrors, setFormErrors] = useState({});
     const [formValues4, setFormValue4] = useState([]);
+    const [formValues5, setFormValue5] = useState([]);
     const [isSubmit, setisSubmit] = useState(false);
     const [isSubmit1, setisSubmit1] = useState(false);
-    // const [ischeck, setCheck] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
     const [selectedOption2, setSelectedOption2] = useState('');
     const [selectedOption3, setSelectedOption3] = useState('');
@@ -24,25 +27,35 @@ const Page3 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(selectedOption, selectedOption2, selectedOption3));
-        console.log(totalValue);
         setisSubmit(true)
+        // console.log(totalValue);
     };
 
     useEffect(() => {
         setFormValue4(totalValue);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            const statesToPass = {
-                formValue: formValue,
-                formValue1: formValue1,
-                formValue2: formValue2,
-                formValues4: formValues4
-            };
-            navigator('../Page3', { state: statesToPass });
-            console.log(statesToPass)
+            if (formValue == null || formValue1 == null || formValue2 == null || formValue === '' || formValue1 === '' || formValue2 === '') {
+                const statesToPass = {
+                    formValue5: formValues15,
+                    formValue1: formValues14,
+                    formValue2: formValues13,
+                    formValues4: formValues4
+                };
+                navigator('../Page4', { state: statesToPass });
+            } else {
+                const statesToPass = {
+                    formValue5: formValue,
+                    formValue1: formValue1,
+                    formValue2: formValue2,
+                    formValues4: formValues4
+                };
+                navigator('../Page4', { state: statesToPass });
+            }
+            console.log(location.state)
         }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [formErrors, selectedOption, selectedOption2, selectedOption3])
+        [formErrors, selectedOption, selectedOption2, selectedOption3, isSubmit])
 
 
 
@@ -51,22 +64,19 @@ const Page3 = () => {
         setisSubmit1(true);
     }
 
-    
+
     useEffect(() => {
-        setFormValue4(totalValue);
+        setFormValue5(formValue);
         if (isSubmit1) {
             const statesToPass = {
-                formValue: formValue,
-                formValue1: formValue1,
-                formValue2: formValue2,
-                formValues4: formValues4
+                formValue5: formValues5,
             };
             navigator('../Page2', { state: statesToPass });
-            console.log(statesToPass)
+            // console.log(formValues5)
         }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [selectedOption, selectedOption2, selectedOption3])
+        [selectedOption, selectedOption2, selectedOption3, isSubmit1])
 
     const validate = (values) => {
         const errors = {};
@@ -85,7 +95,7 @@ const Page3 = () => {
     const handleChange = (e) => {
         // Destructuring
         const { value, checked } = e.target;
-        console.log(`${value} is ${checked}`);
+        // console.log(`${value} is ${checked}`);
         if (checked === false) {
             setSelectedOption('');
         } else {
@@ -95,7 +105,7 @@ const Page3 = () => {
     const handleChange2 = (e) => {
         // Destructuring
         const { value, checked } = e.target;
-        console.log(`${value} is ${checked}`);
+        // console.log(`${value} is ${checked}`);
         if (checked === false) {
             setSelectedOption2('');
         } else {
@@ -105,7 +115,7 @@ const Page3 = () => {
     const handleChange3 = (e) => {
         // Destructuring
         const { value, checked } = e.target;
-        console.log(`${value} is ${checked}`);
+        // console.log(`${value} is ${checked}`);
         if (checked === false) {
             setSelectedOption3('');
         } else {
@@ -161,7 +171,7 @@ const Page3 = () => {
                                 <input type="checkbox"
                                     name="radioed"
                                     id="myCheckbox4"
-                                    value="option1"
+                                    value="Online service"
                                     // checked={selectedOption === 'option1'}
                                     onChange={handleChange}
                                 />
@@ -169,38 +179,38 @@ const Page3 = () => {
                                     <div className="plan1" >
                                         <span className="planName">Online service</span>
                                         <span className="planPrice">Access to multiplayer games</span>
-                                    </div>                                     
-                                     <span className="Prices">{ formValue2 === 'false' ? '+$1/mo' : '+$10/yr' }</span>
+                                    </div>
+                                    <span className="Prices">{formValue2 === 'false' ? '+$1/mo' : '+$10/yr'}</span>
                                 </label>
                             </div>
                             <div className="planWrapper">
                                 <input type="checkbox"
                                     name="radioed"
                                     id="myCheckbox5"
-                                    value="option2"
+                                    value="Larger storage"
                                     // checked={selectedOption === 'option2'}
                                     onChange={handleChange2} />
                                 <label for="myCheckbox5">
                                     <div className="plan1" >
                                         <span className="planName">Larger storage</span>
                                         <span className="planPrice">Extra 1TB of cloud save</span>
-                                    </div>                                    
-                                     <span className="Prices">{ formValue2 === 'false' ? '+$2/mo' : '+$20/yr' }</span>
+                                    </div>
+                                    <span className="Prices">{formValue2 === 'false' ? '+$2/mo' : '+$20/yr'}</span>
                                 </label>
                             </div>
                             <div className="planWrapper">
                                 <input type="checkbox"
                                     name="radioed"
                                     id="myCheckbox6"
-                                    value="option3"
+                                    value="Customizable Profile"
                                     // checked={selectedOption === 'option3'}
                                     onChange={handleChange3} />
                                 <label for="myCheckbox6">
                                     <div className="plan1" >
                                         <span className="planName">Customizable Profile</span>
                                         <span className="planPrice">Custom theme on your profile</span>
-                                    </div>                                
-                                     <span className="Prices">{ formValue2 === 'false' ? '+$2/mo' : '+$20/yr' }</span>
+                                    </div>
+                                    <span className="Prices">{formValue2 === 'false' ? '+$2/mo' : '+$20/yr'}</span>
                                 </label>
                             </div>
                         </div>

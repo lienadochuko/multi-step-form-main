@@ -47,7 +47,7 @@ const Home = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        formValue({ ...form, [name]: value });        
+        formValue({ ...form, [name]: value });
     };
 
     const validate = (values) => {
@@ -120,7 +120,7 @@ const Home = () => {
                             placeholder="Venessa Mint"
                             value={form.name}
                             onChange={handleChange}
-                            style={{ border: formErrors.name ? '1px solid #FF6257' : '', color: formErrors.name ? '#FF6257' : ''}}
+                            style={{ border: formErrors.name ? '1px solid #FF6257' : '', color: formErrors.name ? '#FF6257' : '' }}
                         />
                         <span className="label_error"><label className="label">Email Address</label> <span className="error">{formErrors.email}</span></span>
                         <input
@@ -145,7 +145,7 @@ const Home = () => {
                             style={{ border: formErrors.phone ? '1px solid #FF6257' : '', color: formErrors.phone ? '#FF6257' : '' }}
                         />
 
-                    <div className="buttonHolder">
+                        <div className="buttonHolder">
                             <button className="button1">Go Back</button>
                             <button className="button">Next Step</button>
                         </div>

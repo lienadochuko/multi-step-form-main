@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import '../styles/Page2.css'
@@ -9,13 +10,13 @@ import sidebar1 from '../assets/Untitled design.png';
 
 
 const Page2 = () => {
-    // const initValue = {
-    //     name: "",
-    //     email: "",
-    //     phone: ""
-    // }
     let navigator = useNavigate();
     let location = useLocation();
+
+
+    const {
+        formValue5,
+    } = location.state;
 
     const [formValue, setFormValue] = useState();
     const [formValue1, setFormValue1] = useState('');
@@ -34,24 +35,25 @@ const Page2 = () => {
 
     const handleToggle = (e) => {
         setCheck(!ischeck);
+        // console.log(location.state)
     };
 
     useEffect(() => {
-        // console.log(selectedOption);
-        // console.log(isSubmit);
-        // console.log(formErrors);
-        // console.log(formValue);
-        // console.log(formValue1);
-        setFormValue(location.state);
+        if (location.state == null || location.state === '') {
+            setFormValue(formValue5)
+        } else {
+            setFormValue(location.state);
+        }
         setFormValue1(selectedOption);
         setFormValue2(String(ischeck));
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             const statesToPass = {
                 formValue: formValue,
-                formValue1: formValue1,                
+                formValue1: formValue1,
                 formValue2: formValue2,
             };
             navigator('../Page3', { state: statesToPass });
+            console.log(formValue);
         }
     },
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,7 +64,7 @@ const Page2 = () => {
     };
 
     const goBack = (e) => {
-        navigator('../');        
+        navigator('../');
     }
 
 
@@ -113,6 +115,8 @@ const Page2 = () => {
                 <div className="body">
                     <span className="title">Select your plan</span>
                     <span className="instruction">You have the option of monthly or yearly billing</span>
+                    {/* <p>formValue: {formValue5.email} <br/>
+                formValue1: {formValue6} <br/>formValue1: {formValue7} formValue1: {formValue8.value1} </p> */}
                     <form onSubmit={handleSubmit} className="form1">
                         <span className="errorText">{formErrors.options}</span>
                         <div className="Wrapper">
@@ -120,8 +124,8 @@ const Page2 = () => {
                                 <input type="radio"
                                     name="radioed"
                                     id="myCheckbox1"
-                                    value="option1"
-                                    checked={selectedOption === 'option1'}
+                                    value="Arcade"
+                                    checked={selectedOption === 'Arcade'}
                                     onChange={handleOptionChange}
                                 />
                                 <label for="myCheckbox1">
@@ -137,8 +141,8 @@ const Page2 = () => {
                                 <input type="radio"
                                     name="radioed"
                                     id="myCheckbox2"
-                                    value="option2"
-                                    checked={selectedOption === 'option2'}
+                                    value="Advanced"
+                                    checked={selectedOption === 'Advanced'}
                                     onChange={handleOptionChange} />
                                 <label for="myCheckbox2">
                                     <img src={advanced} alt="checkbox" />
@@ -153,8 +157,8 @@ const Page2 = () => {
                                 <input type="radio"
                                     name="radioed"
                                     id="myCheckbox3"
-                                    value="option3"
-                                    checked={selectedOption === 'option3'}
+                                    value="Pro"
+                                    checked={selectedOption === 'Pro'}
                                     onChange={handleOptionChange} />
                                 <label for="myCheckbox3">
                                     <img src={pro} alt="checkbox" />
@@ -173,13 +177,13 @@ const Page2 = () => {
                             </p>
                             <input type="checkbox"
                                 id="switch"
-                                class="checkbox"
+                                className="checkbox"
                                 value={ischeck}
                                 onChange={handleToggle}
                             />
 
                             <label for="switch"
-                                class="toggle">
+                                className="toggle">
                             </label>
                         </div>
                         <div className="buttonHolder1">
