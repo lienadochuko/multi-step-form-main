@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+# Frontend Mentor - Multi-step form solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
+ 
+Users should be able to:
 
-### `npm test`
+- Complete each step of the sequence
+- Go back to a previous step to update their selections
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- Receive form validation messages if:
+  - A field has been missed
+  - The email address is not formatted correctly
+  - A step is submitted, but no selection has been made
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![](./screenshot.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solution URL: [multi-step-form](https://github.com/lienadochuko/multi-step-form-main)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Semantic HTML5 markup
+- SCSS custom properties
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+- [Sass](https://sass-lang.com/documentation/) - React framework
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+-Data Transfer
+-Problem with SVG Manipulation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To see how you can add code snippets, see below:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+let navigator = useNavigate();
+    let location = useLocation();
+    const {
+        formValue,
+        formValue1,
+        formValue2,
+        formValues15,
+        formValues14,
+        formValues13 } = location.state;
 
-### Code Splitting
+    const [formErrors, setFormErrors] = useState({});
+    const [formValues4, setFormValue4] = useState([]);
+    const [formValues5, setFormValue5] = useState([]);
+    const [isSubmit, setisSubmit] = useState(false);
+    const [isSubmit1, setisSubmit1] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption2, setSelectedOption2] = useState('');
+    const [selectedOption3, setSelectedOption3] = useState('');
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(selectedOption, selectedOption2, selectedOption3));
+        setisSubmit(true)
+        // console.log(totalValue);
+    };
 
-### Analyzing the Bundle Size
+    useEffect(() => {
+        setFormValue4(totalValue);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            if (formValue == null || formValue1 == null || formValue2 == null || formValue === '' || formValue1 === '' || formValue2 === '') {
+                const statesToPass = {
+                    formValue5: formValues15,
+                    formValue1: formValues14,
+                    formValue2: formValues13,
+                    formValues4: formValues4
+                };
+                navigator('../Page4', { state: statesToPass });
+            } else {
+                const statesToPass = {
+                    formValue5: formValue,
+                    formValue1: formValue1,
+                    formValue2: formValue2,
+                    formValues4: formValues4
+                };
+                navigator('../Page4', { state: statesToPass });
+            }
+            console.log(location.state)
+        }
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [formErrors, selectedOption, selectedOption2, selectedOption3, isSubmit])
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    const goBack1 = (e) => {
+        e.preventDefault();
+        setisSubmit1(true);
+    }
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    useEffect(() => {
+        setFormValue5(formValue);
+        if (isSubmit1) {
+            const statesToPass = {
+                formValue5: formValues5,
+            };
+            navigator('../Page2', { state: statesToPass });
+            // console.log(formValues5)
+        }
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [selectedOption, selectedOption2, selectedOption3, isSubmit1])
 
-### Deployment
+    const validate = (values) => {
+        const errors = {};
+        if (selectedOption === '' && selectedOption2 === '' && selectedOption3 === '') {
+            errors.options = "Please select an plan"
+        }
+        return errors;
+    }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+if date looping was thing....lol
 
-### `npm run build` fails to minify
+**Note: Delete this note and the content within this section and replace with your own learnings.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Continued development
+
+-Better Techniques for data tranfer been page modules.
+-using local storage in the place of useStates
+
+**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+
+### Useful resources
+
+- [Radio-Input](https://www.geeksforgeeks.org/how-to-get-multiple-checkbox-values-in-react-js/) - This helped me for working with Radio inputs and alzo the design inspiration. I really liked this pattern and will use it going forward.
+- [CheckBox](https://codepen.io/echosoft/pen/RaVEvG) - This is an amazing article which helped me finally understand checkBox. I'd recommend it to anyone still learning this concept.
+
+## Author
+
+- Website - [Daniel Erhisohwode](https://erhisdaniel.netlify.app/)
+- Frontend Mentor - [@lienadochuko](https://www.frontendmentor.io/profile/lienadochuko)
+- Twitter - [@erhisO](https://www.twitter.com/erhisO)
+
