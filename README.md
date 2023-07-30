@@ -36,7 +36,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screencapture-dan-multi-step-form-vercel-app-2023-07-30-17_17_46](https://github.com/lienadochuko/multi-step-form-main/assets/66309753/5b35ead4-16bd-4e06-ac06-df34698cfece)
+![screencapture-dan-multi-step-form-vercel-app-Page2-2023-07-30-17_18_01](https://github.com/lienadochuko/multi-step-form-main/assets/66309753/86c6cd8e-f0a6-4715-99f3-cd97861a2610)
 
 **Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
