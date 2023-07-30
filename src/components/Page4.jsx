@@ -181,7 +181,7 @@ const Page4 = () => {
                     </div>
                     <div className="wrapperTotal">
                         <div className="info">
-                            <span className="chosen1">Total (per month/year)</span>
+                            <span className="chosen1">Total ({formValue6 === 'false' ? 'per month' : 'per year'})</span>
                             <span className="chosen3">+${total}/{formValue6 === 'false' ? 'mo' : 'yr'}</span>
                         </div>
                     </div>

@@ -76,8 +76,8 @@ const Page2 = () => {
         return errors;
     }
     return (
-        <div className="container">
-            <div className="wrapper">
+        <div className="container2">
+            <div className="wrapper2">
                 <img src={sidebar1} alt="sidebar" className="sidebar" />
                 <div className="stepswrapper">
                     <div className="steps">
@@ -112,7 +112,7 @@ const Page2 = () => {
                         </div>
                     </div>
                 </div>
-                <div className="body">
+                <div className="body2">
                     <span className="title">Select your plan</span>
                     <span className="instruction">You have the option of monthly or yearly billing</span>
                     {/* <p>formValue: {formValue5.email} <br/>
@@ -172,8 +172,8 @@ const Page2 = () => {
                         </div>
                         <div className="monthYear">
                             <p>
-                                <span>Monthly</span>
-                                <span>Yearly</span>
+                                <span style={{ color: ischeck ? '' : 'hsl(213, 96%, 18%)' }}>Monthly</span>
+                                <span style={{ color: ischeck ? 'hsl(213, 96%, 18%)' : '' }}>Yearly</span>
                             </p>
                             <input type="checkbox"
                                 id="switch"

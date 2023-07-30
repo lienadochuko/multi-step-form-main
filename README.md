@@ -43,7 +43,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [multi-step-form](https://github.com/lienadochuko/multi-step-form-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [dan-multi-step-form](https://dan-multi-step-form.vercel.app/)
 
 ## My process
 
@@ -52,6 +52,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - SCSS custom properties
 - Flexbox
+- React Hooks
 - [React](https://reactjs.org/) - JS library
 - [Sass](https://sass-lang.com/documentation/) - React framework
 

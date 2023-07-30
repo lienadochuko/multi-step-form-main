@@ -1,11 +1,13 @@
 import React from "react";
 import '../styles/Page5.css';
 import sidebar1 from '../assets/Untitled design.png';
+// import sidebarMobile from '../assets/bg-sidebar-mobile.svg';
+import thankYou from '../assets/icon-thank-you.svg';
 
 const Page5 = () => {
     return (
-        <div className="container4">
-            <div className="wrapper4">
+        <div className="container5">
+            <div className="wrapper5">
                 <img src={sidebar1} alt="sidebar" className="sidebar" />
                 <div className="stepswrapper">
                     <div className="steps">
@@ -40,8 +42,15 @@ const Page5 = () => {
                         </div>
                     </div>
                 </div>
-                <div className="body4">
-                    <div>fgchjkl</div>
+                <div className="body5">
+                    <div className="wrapperthanks">
+                        <img src={thankYou} alt="thank you" className="thankyou" />
+                        <div className="title">Thank you!</div>
+                        <p className="word">Thanks for confirming your subscription! We hope you have
+                            fun using our platform. If you ever need support, please feel
+                            free to email us at support@loremgaming.com.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

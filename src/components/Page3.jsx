@@ -159,11 +159,11 @@ const Page3 = () => {
                         </div>
                     </div>
                 </div>
-                <div className="body">
-                    <span className="title">Pick add-ons Add-ons</span>
+                <div className="body3">
+                    <span className="title">Pick add-ons</span>
                     {/* <p>formValue: {formValue.name} <br /> formValue: {formValue.email} <br /> formValue: {formValue.phone} <br/>
                 formValue1: {formValue1} <br/>formValue1: {formValue2} <br/> {totalValue.value1}  {totalValue.value2}  {totalValue.value3}</p> */}
-                    <span className="instruction">help enhance your gaming experience</span>
+                    <span className="instruction">Add-ons help enhance your gaming experience</span>
                     <form onSubmit={handleSubmit} className="form1">
                         <span className="errorText">{formErrors.options}</span>
                         <div className="Wrapper1">

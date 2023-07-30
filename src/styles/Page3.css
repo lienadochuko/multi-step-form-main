@@ -8,6 +8,12 @@
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 600px) {
+  .container3 {
+    align-items: flex-start;
+    background-color: hsl(0, 0%, 100%);
+  }
+}
 .container3 .wrapper {
   width: 60%;
   height: 80%;
@@ -20,10 +26,46 @@
   align-items: center;
   font-family: "Ubuntu", sans-serif;
 }
+@media only screen and (max-width: 1320px) {
+  .container3 .wrapper {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .container3 .wrapper {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .container3 .wrapper {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper {
+    width: 100%;
+    height: 90%;
+    background-color: hsl(217, 100%, 97%);
+    flex-direction: column;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px #ffffff;
+  }
+}
 .container3 .wrapper .sidebar {
   width: 26%;
   height: 96%;
   float: left;
+}
+@media only screen and (max-width: 900px) {
+  .container3 .wrapper .sidebar {
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .sidebar {
+    display: none;
+  }
 }
 .container3 .wrapper .stepswrapper {
   width: 25.2%;
@@ -35,6 +77,17 @@
   justify-content: flex-start;
   z-index: 1000;
 }
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper {
+    width: 100%;
+    background-image: url("../assets/bg-sidebar-mobile.png");
+    top: 0%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 .container3 .wrapper .stepswrapper .steps {
   width: 80%;
   height: 10%;
@@ -43,6 +96,14 @@
   padding-left: 10%;
   margin-bottom: 10%;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps {
+    width: 10%;
+    margin-top: 5%;
+    padding: 0%;
+    padding-right: 6%;
+  }
 }
 .container3 .wrapper .stepswrapper .steps .number {
   width: 30px;
@@ -58,6 +119,14 @@
   font-weight: 500;
   margin-right: 5%;
 }
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps .number {
+    width: 40px;
+    height: 40px;
+    margin: 0%;
+    border-radius: 55%;
+  }
+}
 .container3 .wrapper .stepswrapper .steps .steps2 {
   display: flex;
   flex-direction: column;
@@ -68,12 +137,22 @@
   font-weight: 500;
   opacity: 0.7;
 }
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps .steps2 .stepNo {
+    display: none;
+  }
+}
 .container3 .wrapper .stepswrapper .steps .steps2 .stepTitle {
   margin-top: 5%;
   color: hsl(0, 0%, 100%);
   font-family: "Ubuntu", sans-serif;
   font-size: 13px;
   font-weight: 700;
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps .steps2 .stepTitle {
+    display: none;
+  }
 }
 .container3 .wrapper .stepswrapper .steps1 {
   width: 80%;
@@ -83,6 +162,14 @@
   padding-left: 10%;
   margin-bottom: 10%;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps1 {
+    width: 10%;
+    margin-top: 5%;
+    padding: 0%;
+    padding-right: 6%;
+  }
 }
 .container3 .wrapper .stepswrapper .steps1 .number {
   width: 30px;
@@ -99,6 +186,14 @@
   font-weight: 700;
   margin-right: 5%;
 }
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps1 .number {
+    width: 40px;
+    height: 40px;
+    margin: 0%;
+    border-radius: 55%;
+  }
+}
 .container3 .wrapper .stepswrapper .steps1 .steps2 {
   display: flex;
   flex-direction: column;
@@ -109,6 +204,11 @@
   font-weight: 500;
   opacity: 0.7;
 }
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps1 .steps2 .stepNo {
+    display: none;
+  }
+}
 .container3 .wrapper .stepswrapper .steps1 .steps2 .stepTitle {
   margin-top: 5%;
   color: hsl(0, 0%, 100%);
@@ -116,7 +216,12 @@
   font-size: 13px;
   font-weight: 700;
 }
-.container3 .wrapper .body {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .stepswrapper .steps1 .steps2 .stepTitle {
+    display: none;
+  }
+}
+.container3 .wrapper .body3 {
   width: 60%;
   height: 80%;
   position: relative;
@@ -129,39 +234,78 @@
   font-family: "Ubuntu", sans-serif;
   z-index: 9999;
 }
-.container3 .wrapper .body .title {
+@media only screen and (max-width: 900px) {
+  .container3 .wrapper .body3 {
+    width: 65%;
+    height: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 {
+    width: 95%;
+    height: 60%;
+    display: flex;
+    margin-top: 26%;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    padding: 0%;
+  }
+}
+.container3 .wrapper .body3 .title {
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 28px;
   font-family: "Ubuntu", sans-serif;
 }
-.container3 .wrapper .body .instruction {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .title {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8%;
+  }
+}
+.container3 .wrapper .body3 .instruction {
   font-weight: 400;
   color: hsl(231, 11%, 63%);
   font-size: 13px;
   margin-bottom: 5%;
   font-family: "Ubuntu", sans-serif;
 }
-.container3 .wrapper .body .form1 {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .instruction {
+    width: 85%;
+    margin-left: 5%;
+    font-size: 18px;
+    margin-bottom: 5%;
+  }
+}
+.container3 .wrapper .body3 .form1 {
   width: 90%;
   height: 100%;
   padding: 0%;
   margin: 0%;
   font-family: "Ubuntu", sans-serif;
 }
-.container3 .wrapper .body .form1 .errorText {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .form1 {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 16px;
+  }
+}
+.container3 .wrapper .body3 .form1 .errorText {
   color: hsl(354, 84%, 57%);
   font-weight: 700;
   font-size: 10px;
 }
-.container3 .wrapper .body .form1 .buttonHolder1 {
+.container3 .wrapper .body3 .form1 .buttonHolder1 {
   height: 37%;
   width: 98%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-.container3 .wrapper .body .form1 .buttonHolder1 .button5 {
+.container3 .wrapper .body3 .form1 .buttonHolder1 .button5 {
   width: 25%;
   height: 20%;
   display: flex;
@@ -176,10 +320,19 @@
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
 }
-.container3 .wrapper .body .form1 .buttonHolder1 .button5:hover {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .form1 .buttonHolder1 .button5 {
+    position: absolute;
+    width: 35%;
+    height: 10%;
+    bottom: -56%;
+    left: 0%;
+  }
+}
+.container3 .wrapper .body3 .form1 .buttonHolder1 .button5:hover {
   color: hsl(213, 96%, 18%);
 }
-.container3 .wrapper .body .form1 .buttonHolder1 .button4 {
+.container3 .wrapper .body3 .form1 .buttonHolder1 .button4 {
   width: 25%;
   height: 20%;
   display: flex;
@@ -194,10 +347,19 @@
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
 }
-.container3 .wrapper .body .form1 .buttonHolder1 .button4:hover {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .form1 .buttonHolder1 .button4 {
+    position: absolute;
+    width: 35%;
+    height: 10%;
+    bottom: -56%;
+    right: 0%;
+  }
+}
+.container3 .wrapper .body3 .form1 .buttonHolder1 .button4:hover {
   background-color: hsla(213, 96%, 18%, 0.808);
 }
-.container3 .wrapper .body .Wrapper1 {
+.container3 .wrapper .body3 .Wrapper1 {
   width: 100%;
   height: 50%;
   display: flex;
@@ -206,7 +368,12 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .Wrapper1 {
+    height: 90%;
+  }
+}
+.container3 .wrapper .body3 .Wrapper1 .planWrapper {
   width: 98%;
   height: 25%;
   position: relative;
@@ -215,12 +382,17 @@
   padding: 0%;
   margin: 0%;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper input[type=checkbox][id^=myCheckbox] {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .Wrapper1 .planWrapper {
+    height: 28%;
+  }
+}
+.container3 .wrapper .body3 .Wrapper1 .planWrapper input[type=checkbox][id^=myCheckbox] {
   display: flex;
   position: absolute;
   margin-left: 5%;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper label {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper label {
   width: 100%;
   height: 100%;
   border: 2px solid hsl(229, 24%, 87%);
@@ -237,7 +409,12 @@
   padding-left: 10%;
   padding-right: 5%;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper label:before {
+@media only screen and (max-width: 600px) {
+  .container3 .wrapper .body3 .Wrapper1 .planWrapper label {
+    margin-top: 0%;
+  }
+}
+.container3 .wrapper .body3 .Wrapper1 .planWrapper label:before {
   background-color: white;
   color: white;
   content: "";
@@ -249,54 +426,54 @@
   transition-duration: 0.4s;
   transform: scale(0);
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper img {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper img {
   height: 35%;
   width: 35%;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper :checked + label {
   background-color: hsla(228, 100%, 84%, 0.171);
   border: 2px solid hsl(228, 100%, 84%);
   border-radius: 10px;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label:before {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper :checked + label:before {
   content: " ";
   display: none;
   background-color: none;
   border: none;
   transform: scale(1);
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper :checked + label img {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper :checked + label img {
   transform: scale(0.9);
   /* box-shadow: 0 0 5px #333; */
   z-index: -1;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper .Prices {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper .Prices {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   color: hsl(243, 100%, 62%);
   font-size: 15px;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper .plan1 {
   height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planName {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper .plan1 .planName {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   color: hsl(213, 96%, 18%);
   font-size: 16px;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planPrice {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper .plan1 .planPrice {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   color: hsl(231, 11%, 63%);
   font-size: 13px;
 }
-.container3 .wrapper .body .Wrapper1 .planWrapper .plan1 .planbonus {
+.container3 .wrapper .body3 .Wrapper1 .planWrapper .plan1 .planbonus {
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   color: hsl(213, 96%, 18%);
